@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직원 출근 시스템</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; text-align: center; padding: 50px; background-color: #1a1c2c; color: white; }
+        .container { background: #2a2d45; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); display: inline-block; }
+        h2 { color: #4ecca3; }
+        input { padding: 12px; font-size: 18px; width: 220px; border: none; border-radius: 5px; margin-bottom: 10px; outline: none; }
+        button { padding: 12px 25px; font-size: 18px; background-color: #4ecca3; color: #1a1c2c; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        button:hover { background-color: #45b791; }
+        #log { margin-top: 30px; text-align: left; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; background: #333652; padding: 15px; border-radius: 10px; height: 300px; overflow-y: auto; }
+        .entry { border-bottom: 1px solid #444; padding: 10px 0; font-size: 14px; }
+        .entry span { color: #4ecca3; font-weight: bold; }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h2>출근 체크 📋</h2>
+    <input type="text" id="empNumber" placeholder="직원 번호 입력" onkeypress="if(event.keyCode==13) checkIn()">
+    <button onclick="checkIn()">출근하기</button>
+
+    <div id="log">
+        <div id="list">연결 중...</div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="
